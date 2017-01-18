@@ -25,7 +25,9 @@ Or install it yourself as:
 `swap_nested_value(key, value)` can replace value in nested hash.
 
 ```rb
-hash = { { ruby: 1, java: { scala: 2, python: [golang: { ruby: 3, perl: 4 }, ruby: 5] } } }
+require 'dig_nested_hash'
+
+hash = { ruby: 1, java: { scala: 2, python: [golang: { ruby: 3, perl: 4 }, ruby: 5] } }
 p hash.swap_nested_value(:ruby, 10)
 # => { { ruby: 10, java: { scala: 2, python: [golang: { ruby: 10, perl: 4 }, ruby: 10] } } }
 ```
